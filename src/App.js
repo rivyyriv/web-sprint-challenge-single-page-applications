@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import Pizza from "./Pizza.js";
 import './App.css';
 
@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 
+const [orders, newOrder] = useState([]);
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
      
         <Switch>
           <Route path="/Pizza">
-            <Pizza />
+            <Pizza newOrder={newOrder} orders={orders} />
           </Route>
         </Switch>
       </div>
