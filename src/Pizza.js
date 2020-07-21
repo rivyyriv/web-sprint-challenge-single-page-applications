@@ -43,13 +43,14 @@ const Pizza = (props) => {
           <div className="box">
             <form onSubmit={handleSubmit}>
               <div className="field">
-                <label className="label">Name</label>
                 <div className="control">
+                  <h3>Order Youre Pizza here!</h3>
+                  <label className="label">Name</label>
                   <input className="input"  onChange={handleName} type="name" name="Name" required />
-                  <MultiSelect options={options} value={selected} onChange={setSelected} labelledBy={"Choose your size of Pizza"}/>
+                  <MultiSelect className="input" options={options} value={selected} onChange={setSelected} labelledBy={"Choose your size of Pizza"}/>
+                  <button type="submit" className="button is-block is-info is-fullwidth">Submit</button>
                 </div>
               </div>
-              <button type="submit" className="button is-block is-info is-fullwidth">Submit</button>
             </form>
           </div>
         </div>

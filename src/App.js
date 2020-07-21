@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Pizza from "./Pizza.js";
+import Home from "./Home.js";
+
 import './App.css';
 
 import {
@@ -9,9 +11,11 @@ import {
   Link
 } from "react-router-dom";
 
-const [orders, newOrder] = useState([]);
 
 const App = () => {
+
+  const [orders, newOrder] = useState([]);
+
   return (
     <>
       <h1>Lambda Eats</h1>
@@ -20,7 +24,10 @@ const App = () => {
       <div>
         <ul>
           <li>
-            <Link to="/Pizza">Order pizza</Link>
+          <Link id="nav" to="/">Home</Link>
+          </li>
+          <li>
+            <Link id="nav"  to="/Pizza">Order pizza</Link>
           </li>
         </ul>
 
@@ -30,6 +37,9 @@ const App = () => {
         <Switch>
           <Route path="/Pizza">
             <Pizza newOrder={newOrder} orders={orders} />
+          </Route>
+          <Route path="/">
+            <Home/>
           </Route>
         </Switch>
       </div>

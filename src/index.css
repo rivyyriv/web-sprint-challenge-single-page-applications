@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(190, 185, 185);
+  text-decoration: none;
+  color: brown;
+  font-size: large;
+  border: burlywood;
+  border-style: solid;
+  border-radius: 10%;
+  margin: 1%;
+  
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.control{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: burlywood;
+  border-radius: 5%;
+  padding: 10%;
+
+}
+.input {
+
+  margin-bottom: 10%;
+}
