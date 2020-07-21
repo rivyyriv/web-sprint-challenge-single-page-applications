@@ -16,6 +16,8 @@ const App = () => {
 
   const [orders, newOrder] = useState([]);
 
+  console.log(orders)
+
   return (
     <>
       <h1>Lambda Eats</h1>
@@ -42,8 +44,18 @@ const App = () => {
             <Home/>
           </Route>
         </Switch>
+
       </div>
     </Router>
+
+    <div className="order-list">
+          {orders.map((order) => (
+            <div className="control1" >
+              <h2>{order.Name}</h2>
+              <p>{order.instructions}</p>
+            </div>
+          ))}
+        </div>
       
     </>
   );
