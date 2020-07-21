@@ -10,16 +10,29 @@ const Pizza = (props) => {
           { label: "Medium", value: "Medium" },
           { label: "Large", value: "Large" },
         ];
+        const toppingoptions = [
+          { label: "Pineapple", value: "Pineapple" },
+          { label: "Bacon Strips", value: "Bacon Strips" },
+          { label: "Mushrooms", value: "Mushrooms" },
+          { label: "Pepperoni", value: "Pepperoni" },
+
+        ];
       
         const [selected, setSelected] = useState([]);
 
         const [Name, setName] = useState("");
 
+        const [instructions, setIntructions] = useState("");
+
+        const [Toppings, setToppings] = useState([]);
+
+
+
         const handleSubmit = event => {
             event.preventDefault();
             if (selected && Name) {
              alert(`Youre ${selected} is on its way!`);
-             props.newOrder([...props.orders, { Name, selected }]);
+             props.newOrder([...props.orders, { Name, selected, Toppings, instructions }]);
               resetState();
             }
         }
@@ -32,7 +45,9 @@ const Pizza = (props) => {
          let handleName = e => {
               setName(e.target.value)
             }
-
+        let handleinstructions = e => {
+              setIntructions(e.target.value)
+            }
 
   return (
 
@@ -48,7 +63,12 @@ const Pizza = (props) => {
                   <label className="label">Name</label>
                   <input className="input"  onChange={handleName} type="name" name="Name" required />
                   <MultiSelect className="input" options={options} value={selected} onChange={setSelected} labelledBy={"Choose your size of Pizza"}/>
-                  <button type="submit" className="button is-block is-info is-fullwidth">Submit</button>
+                  <label className="label">special instructions</label>
+                  <input className="input"  onChange={handleinstructions} type="name" name="instructions" required />
+                  <MultiSelect className="input" options={toppingoptions} value={Toppings} onChange={setToppings} labelledBy={"Choose your toppings"}/>
+
+
+                 <button type="submit" className="button is-block is-info is-fullwidth">Submit</button>
                 </div>
               </div>
             </form>
